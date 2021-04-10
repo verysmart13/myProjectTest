@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseFirestore
 
 class Global {
     static var user: String?
@@ -62,7 +64,7 @@ struct Record {
     var user: String
     var user_name: String
     var result: Int
-    var time: Date
+    var time: Timestamp
 }
 extension Record {
     init(dic: [String: Any]) {
@@ -71,7 +73,7 @@ extension Record {
         user_name = dic["user_name"] as? String ?? ""
         initiator_name = dic["initiator_name"] as? String ?? ""
         result = dic["result"] as? Int ?? 0
-        time = dic["time"] as? Date ?? Date()
+        time = dic["time"] as! Timestamp
     }
 }
 

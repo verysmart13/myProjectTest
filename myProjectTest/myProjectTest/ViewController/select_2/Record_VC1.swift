@@ -42,7 +42,7 @@ class Record_VC1: Select_VC, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Select_2_Cell") as! Select_2_Cell
         cell.titleLabel.text = records[indexPath.section].initiator_name
-        cell.detailLabel.text = dateToString(date: records[indexPath.section].time)
+        cell.detailLabel.text = dateToString(date: records[indexPath.section].time.dateValue())
         return cell
     }
     
